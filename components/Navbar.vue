@@ -1,7 +1,13 @@
 <template>
-  <div
-    class="
-      w-full
+  <div class="navbar">
+    <Logo />
+    <div>Menu</div>
+  </div>
+</template>
+
+<style lang="postcss" scoped>
+.navbar {
+  @apply w-full
       shadow-lg
       py-3
       px-14
@@ -9,14 +15,11 @@
       justify-between
       items-center
       border-b-[4px] border-mainRed
-      bg-mainGray
+      bg-white/80 
+      backdrop-blur
       fixed
       top-0
       left-0
-      z-50
-    "
-  >
-    <Logo />
-    <div>Menu</div>
-  </div>
-</template>
+      z-[100];
+}
+</style>

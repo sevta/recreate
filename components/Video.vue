@@ -7,7 +7,7 @@
       poster="https://pbprsi.org/videos/poster.jpg"
       loop="loop"
     ></video>
-    <div class="overlay bg-black/50 absolute top-0 left-0 w-full h-full"></div>
+    <div class="overlay"></div>
     <div class="title">
       <div class="title-sub">Olympic Games</div>
       <div class="title-hero">2020</div>
@@ -26,6 +26,11 @@
       overflow-hidden
       justify-center;
 }
+
+.overlay {
+  @apply bg-black/50 absolute top-0 left-0 w-full h-full;
+}
+
 .video {
   @apply w-full h-auto absolute right-auto top-[50%] left-[50%] bottom-auto translate-y-[-50%] translate-x-[-50%];
 }

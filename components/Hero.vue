@@ -1,18 +1,7 @@
 <template>
   <div class="hero w-full relative">
     <Video />
-    <div
-      class="
-        w-full
-        flex
-        items-center
-        justify-center
-        text-white
-        py-10
-        relative
-        overflow-hidden
-      "
-    >
+    <div class="section-2-wrapper">
       <div>
         <img
           class="absolute top-0 left-0 w-full h-full object-cover object-center"
@@ -29,3 +18,16 @@
     </div>
   </div>
 </template>
+
+<style lang="postcss" scoped>
+.section-2-wrapper {
+  @apply w-full
+        flex
+        items-center
+        justify-center
+        text-white
+        py-10
+        relative
+        overflow-hidden;
+}
+</style>
