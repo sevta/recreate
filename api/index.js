@@ -28,8 +28,29 @@ app.get('/', (req, res) => {
   res.send({ msg: 'ok' })
 })
 
+app.post('/auth/register', async (req, res) => {
+  const { username, email, password } = req.body
+  const user = await User.findOne({
+    email,
+  })
+
+  if (user) return res.send({ msg: 'email has been registered' })
+
+  const newUser = await User.create({
+    username,
+    email,
+    password,
+  })
+
+  console.log(newUser)
+  res.send({
+    msg: 'success',
+    user: newUser,
+  })
+})
+
 app.get('/events', async (req, res) => {
-  const users = await User.find()
+  const users = await User.find().select('username email')
   console.log(users)
   res.send({
     message: 'ok',
