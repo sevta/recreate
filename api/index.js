@@ -1,10 +1,16 @@
 const express = require('express')
 const { scryptSync, randomBytes } = require('crypto')
 const app = express()
-// const mongoose = require('mongoose')
-// const db = require('./db')
+const mongoose = require('mongoose')
+
+const MONGODB_URI = process.env.MONGODB_URI
 
 const User = require('./models/User')
+
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
@@ -23,9 +29,14 @@ app.get('/', (req, res) => {
 })
 
 app.get('/events', async (req, res) => {
-  // const users = await User.find()
-  // console.log(users)
-  res.send({ message: 'ok', hash: getHash('tester') })
+  const users = await User.find()
+  console.log(users)
+  res.send({
+    message: 'ok',
+    hash: getHash('tester'),
+    users,
+    status: 'asdasdok',
+  })
 })
 
 module.exports = app

@@ -2,6 +2,7 @@
   <div class="home">
     <Hero />
     <News />
+    {{ events }}
   </div>
 </template>
 
