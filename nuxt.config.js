@@ -38,6 +38,13 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  serverMiddleware: [
+    {
+      handler: '@/api/index.js',
+      path: '/api',
+    },
+  ],
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
