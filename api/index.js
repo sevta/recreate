@@ -15,7 +15,7 @@ const salt = randomBytes(16).toString('hex')
 const getHash = (password) => scryptSync(password, salt, 32).toString('hex')
 
 app.get('/events', (req, res) => {
-  res.send({ message: 'ok', password: getHash('tester') })
+  res.send({ message: 'ok', hash: getHash('tester') })
 })
 
 module.exports = app
