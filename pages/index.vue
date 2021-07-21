@@ -1,20 +1,7 @@
 <template>
-  <div
-    class="
-      w-full
-      min-h-screen
-      bg-indigo-600
-      flex flex-col
-      items-center
-      justify-center
-    "
-  >
-    <div class="font-mono text-white text-sm">
-      <pre>
-        {{ events }}
-      </pre>
-    </div>
-    <div class="text-4xl text-white font-bold">PBPRSI</div>
+  <div class="home">
+    <Hero />
+    <News />
   </div>
 </template>
 
@@ -32,3 +19,16 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.home {
+  @apply w-full
+      min-h-screen
+      flex flex-col
+      items-center
+      justify-center;
+}
+.text {
+  @apply text-4xl text-white font-bold;
+}
+</style>
